@@ -10,6 +10,7 @@ require 'json'
 require 'open-uri'
 
 puts "Cleaning database now..."
+Dose.destroy_all
 Ingredient.destroy_all
 puts "Database clean ✅"
 
@@ -21,5 +22,12 @@ list_array = list["drinks"]
 list_array.each do |ing|
   Ingredient.create(name: ing["strIngredient1"])
 end
+
+Ingredient.create(name: "Grapefruit peel")
+Ingredient.create(name: "Orange peel")
+Ingredient.create(name: "Maraschino cherry")
+Ingredient.create(name: "Angostura bitter")
+Ingredient.create(name: "Mint")
+Ingredient.create(name: "Tonic")
 
 puts "Done! Created #{Ingredient.count} ingredients."
