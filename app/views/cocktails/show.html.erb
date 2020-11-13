@@ -1,7 +1,9 @@
 <div class="container">
 
   <h1><%= @cocktail.name %></h1>
-  <%= link_to "Back to all cocktails", cocktails_path %>
+  <%= link_to "Back to all cocktails", cocktails_path %> <br>
+  <%= link_to  "Edit #{@cocktail.name}", edit_cocktail_path %> <br>
+  <%= link_to "Delete #{@cocktail.name}", cocktail_path, method: :delete, data: { confirm: "Are you sure?" } %>
 
   <div class="row">
     <div class="col-sm-12 col-md-6">
